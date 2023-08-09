@@ -10,18 +10,21 @@ export default function Search() {
   };
 
   const searching = (event) =>{
+    var seperator = ".";
     if (event.key === 'Enter') {
       event.preventDefault();
-      if (searchword.trim() !== '') {
+      if(searchword.startsWith("yt.")){
+        let data = searchword
+        let part = data.split(seperator);
+        data = part[1];
+        window.location.href = `https://www.youtube.com/results?search_query=${encodeURIComponent(data)}`;
+      }else if (searchword.trim() !== '') {
         // Google'da arama yapmak için işlemler burada gerçekleştirilebilir.
         window.location.href = `https://www.google.com/search?q=${encodeURIComponent(searchword)}`;
       }
     }
   }
 
-  const handleInputReset = (event) => {
-    setSearchword("");
-  };
   return (
     <div className='flex flex-col items-center h-screen justify-center pt-12 w-9/12 float-left' >
     <div className='float-left flex flex-col mt-28'>
@@ -33,13 +36,11 @@ export default function Search() {
         value={searchword}
         placeholder='Bir şeyler arayın'
         onChange={handleInputChange}
-        onClick={handleInputReset}
         onKeyDown={searching}
         className='h-12 w-96 rounded-2xl pl-12'
         type='text'
         autoFocus
       /> 
-
     </div>
     <div className='flex mt-24 justify-between items-end'>
       <Favorites />
