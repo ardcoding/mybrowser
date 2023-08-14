@@ -6,7 +6,6 @@ import "./index.css";
 import Translate from './components/translate';
 import { store } from './store';
 import { Provider } from "react-redux";
-import OpenAI from './components/openai';
 
 function App() {
   return (
