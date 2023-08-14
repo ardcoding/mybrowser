@@ -12,7 +12,7 @@ export default function Lolct(){
   };
 
   return (
-    <div className='h-screen w-max float-left'>
+    <div className='h-screen w-3/12 float-left grid justify-items-center' style={{borderRight:"1px solid white"}}>
       <iframe
         title='lolct'
         src={`https://app.mobalytics.gg/tr_tr/lol/champions/${hero}/counters#container`}
@@ -26,7 +26,7 @@ export default function Lolct(){
         value={hero}
         onChange={handleInputChange}
         onClick={handleInputReset}
-        className='fixed h-10 left-14 rounded-md pl-2 w-44 ml-1'
+        className='fixed h-10 rounded-md pl-2 w-2/12'
         style={{top:"18px", height:"39px"}}
         type='text'
       />

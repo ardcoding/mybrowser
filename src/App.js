@@ -1,18 +1,21 @@
 import './App.css';
 import Search from './components/search';
 import Lolct from './components/lolct';
-import Music from './components/music';
 import SocialButtons from './components/social';
 import "./index.css";
+import Translate from './components/translate';
+import { store } from './store';
+import { Provider } from "react-redux";
+import OpenAI from './components/openai';
 
 function App() {
   return (
-    <div className="App">
+    <Provider store={store}>
       <Lolct />
-      <Music />
+      <Translate />
       <Search />
       <SocialButtons />
-    </div>
+    </Provider>
   );
 }
 

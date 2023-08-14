@@ -19,25 +19,25 @@ export default function Search() {
         data = part[1];
         window.location.href = `https://www.youtube.com/results?search_query=${encodeURIComponent(data)}`;
       }else if (searchword.trim() !== '') {
-        // Google'da arama yapmak için işlemler burada gerçekleştirilebilir.
         window.location.href = `https://www.google.com/search?q=${encodeURIComponent(searchword)}`;
       }
     }
   }
 
   return (
-    <div className='flex flex-col items-center h-screen justify-center pt-12 w-9/12 float-left' >
-    <div className='float-left flex flex-col mt-28'>
+    <div className='flex flex-col items-center h-screen justify-center'>
+    <div className='flex w-full justify-center'>
       {/* <h1 className='text-8xl text-center text-white mb-16 mt-12'>Rüchan</h1> */}
       <div>
         <Icon className='absolute mt-1' icon="ic:sharp-search" width={40} />
       </div>
       <input
+
         value={searchword}
         placeholder='Bir şeyler arayın'
         onChange={handleInputChange}
         onKeyDown={searching}
-        className='h-12 w-96 rounded-2xl pl-12'
+        className='h-12 rounded-2xl pl-12 w-6/12'
         type='text'
         autoFocus
       /> 
